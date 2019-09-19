@@ -12,7 +12,7 @@ after_success:
   - docker build -t abutler93/multi-api ./api
   - docker build -t abutler93/multi-worker ./worker
   # login to docker CLI
-  - echo $DOCKER_PDW | docker login -u $DOCKER_ID --password-stdin
+  - docker login -u $DOCKER_ID -p $DOCKER_PWD
   - docker push  abutler93/multi-client
   - docker push  abutler93/multi-nginx
   - docker push  abutler93/multi-api
